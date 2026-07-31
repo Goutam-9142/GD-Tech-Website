@@ -304,9 +304,30 @@ header{
 
 @media(max-width:768px){
 
-.nav-links,
-.nav-btn{
-display:none;
+.menu{
+    display:block;
+    font-size:32px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.nav-links{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:260px;
+    height:calc(100vh - 80px);
+    background:#161b22;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    padding-top:30px;
+    transition:.4s;
+}
+
+.nav-links.show-menu{
+    right:0;
 }
 
 .menu{

@@ -4,9 +4,20 @@
 
 const menu = document.querySelector(".menu");
 const navLinks = document.querySelector(".nav-links");
+const icon = document.querySelector(".menu i");
 
 menu.addEventListener("click", () => {
+
     navLinks.classList.toggle("show-menu");
+
+    if(navLinks.classList.contains("show-menu")){
+        icon.classList.remove("ri-menu-3-line");
+        icon.classList.add("ri-close-line");
+    }else{
+        icon.classList.remove("ri-close-line");
+        icon.classList.add("ri-menu-3-line");
+    }
+
 });
 
 // =========================
