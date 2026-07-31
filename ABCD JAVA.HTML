@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Interview Guide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+padding:40px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.book-cover{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:40px;
+}
+
+.book-cover h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.book-cover p{
+font-size:18px;
+opacity:.95;
+}
+
+.chapter{
+margin-top:45px;
+}
+
+.chapter-title{
+font-size:30px;
+color:#38bdf8;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,.15);
+margin-bottom:25px;
+}
+
+.question{
+padding:25px;
+background:#161b22;
+border-left:5px solid #38bdf8;
+border-radius:12px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.question:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(56,189,248,.2);
+}
+
+.question h3{
+color:#38bdf8;
+margin-bottom:12px;
+}
+
+.question p{
+line-height:1.8;
+color:#d1d5db;
+}
+.back a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 35px;
+    background:#E34F26;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+@media(max-width:768px){
+
+.book-cover{
+padding:30px;
+}
+
+.book-cover h1{
+font-size:30px;
+}
+
+.chapter-title{
+font-size:24px;
+}
+
+.question{
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="book-cover">
+
+<h1>📘 JavaScript Interview Guide</h1>
+
+<p>
+GD Tech Learning Hub
+<br>
+Top JavaScript Interview Questions & Answers
+</p>
+
+</div>
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 1 : JavaScript Basics</h2>
+
+<div class="question">
+<h3>Q1. What is JavaScript?</h3>
+<p>JavaScript is a lightweight, interpreted programming language used to create interactive and dynamic web pages.</p>
+</div>
+
+<div class="question">
+<h3>Q2. What are the features of JavaScript?</h3>
+<p>JavaScript is lightweight, object-based, interpreted, event-driven, asynchronous, cross-platform, and widely used for web development.</p>
+</div>
+
+<div class="question">
+<h3>Q3. What is the difference between var, let, and const?</h3>
+<p><b>var</b> is function-scoped, <b>let</b> is block-scoped and can be reassigned, while <b>const</b> is block-scoped and cannot be reassigned.</p>
+</div>
+
+<div class="question">
+<h3>Q4. What are Data Types in JavaScript?</h3>
+<p>Common data types are String, Number, Boolean, Undefined, Null, BigInt, Symbol, and Object.</p>
+</div>
+
+<div class="question">
+<h3>Q5. What is the difference between == and ===?</h3>
+<p><code>==</code> compares values after type conversion, while <code>===</code> compares both value and data type.</p>
+</div>
+
+<div class="question">
+<h3>Q6. What are Operators in JavaScript?</h3>
+<p>Operators are symbols used to perform operations, such as Arithmetic, Assignment, Comparison, Logical, and Ternary operators.</p>
+</div>
+
+<div class="question">
+<h3>Q7. What is a Variable?</h3>
+<p>A variable is a container used to store data values in a program.</p>
+</div>
+
+<div class="question">
+<h3>Q8. What is a Function?</h3>
+<p>A function is a reusable block of code that performs a specific task.</p>
+</div>
+
+<div class="question">
+<h3>Q9. What is an Arrow Function?</h3>
+<p>An Arrow Function is a shorter syntax for writing functions using the <code>=></code> operator.</p>
+</div>
+
+<div class="question">
+<h3>Q10. What are Template Literals?</h3>
+<p>Template Literals use backticks (<code>`</code>) to create strings and support string interpolation using <code>${}</code>.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 2 : JavaScript Intermediate</h2>
+
+<div class="question">
+<h3>Q11. What is an Array?</h3>
+<p>An Array is a special object used to store multiple values in a single variable.</p>
+</div>
+
+<div class="question">
+<h3>Q12. What is an Object in JavaScript?</h3>
+<p>An Object is a collection of key-value pairs used to store related data and functions.</p>
+</div>
+
+<div class="question">
+<h3>Q13. What is Destructuring?</h3>
+<p>Destructuring is an ES6 feature that allows you to extract values from arrays or objects into separate variables.</p>
+</div>
+
+<div class="question">
+<h3>Q14. What is the Spread Operator?</h3>
+<p>The Spread Operator (<code>...</code>) is used to copy or merge arrays and objects.</p>
+</div>
+
+<div class="question">
+<h3>Q15. What is the Rest Operator?</h3>
+<p>The Rest Operator (<code>...</code>) collects multiple values into a single array or object.</p>
+</div>
+
+<div class="question">
+<h3>Q16. What is forEach()?</h3>
+<p><code>forEach()</code> is an array method used to execute a function once for each array element.</p>
+</div>
+
+<div class="question">
+<h3>Q17. What is map()?</h3>
+<p><code>map()</code> creates and returns a new array by applying a function to every element of an existing array.</p>
+</div>
+
+<div class="question">
+<h3>Q18. What is filter()?</h3>
+<p><code>filter()</code> returns a new array containing only the elements that satisfy a given condition.</p>
+</div>
+
+<div class="question">
+<h3>Q19. What is reduce()?</h3>
+<p><code>reduce()</code> reduces all array elements to a single value by applying a callback function.</p>
+</div>
+
+<div class="question">
+<h3>Q20. What is find()?</h3>
+<p><code>find()</code> returns the first array element that matches a specified condition. If no element matches, it returns <code>undefined</code>.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 3 : Advanced JavaScript</h2>
+
+<div class="question">
+<h3>Q21. What is the DOM?</h3>
+<p>DOM (Document Object Model) is a programming interface that allows JavaScript to access and modify HTML elements dynamically.</p>
+</div>
+
+<div class="question">
+<h3>Q22. What is Event Handling?</h3>
+<p>Event Handling is the process of responding to user actions such as click, submit, keypress, mouseover, and scroll.</p>
+</div>
+
+<div class="question">
+<h3>Q23. What is Event Listener?</h3>
+<p><code>addEventListener()</code> is used to attach an event to an HTML element without overwriting existing events.</p>
+</div>
+
+<div class="question">
+<h3>Q24. What is Hoisting?</h3>
+<p>Hoisting is JavaScript's default behavior of moving variable and function declarations to the top of their scope before execution.</p>
+</div>
+
+<div class="question">
+<h3>Q25. What is a Closure?</h3>
+<p>A Closure is a function that remembers and can access variables from its outer scope even after the outer function has finished executing.</p>
+</div>
+
+<div class="question">
+<h3>Q26. What is a Callback Function?</h3>
+<p>A Callback Function is a function passed as an argument to another function and executed after a task is completed.</p>
+</div>
+
+<div class="question">
+<h3>Q27. What is a Promise?</h3>
+<p>A Promise is an object that represents the eventual success or failure of an asynchronous operation.</p>
+</div>
+
+<div class="question">
+<h3>Q28. What is Async/Await?</h3>
+<p>Async/Await is a modern JavaScript feature used to write asynchronous code in a cleaner and more readable way.</p>
+</div>
+
+<div class="question">
+<h3>Q29. What is the Fetch API?</h3>
+<p>The Fetch API is used to send HTTP requests and receive data from servers or REST APIs.</p>
+</div>
+
+<div class="question">
+<h3>Q30. Why should we learn JavaScript?</h3>
+<p>JavaScript is the core language of web development. It is used to build interactive websites, web applications, server-side applications with Node.js, and modern frameworks like React, Angular, and Vue.</p>
+</div>
+
+</div>
+
+<div class="result">
+🎯 <strong>Congratulations!</strong><br><br>
+You have completed the <b>Top 30 JavaScript Interview Questions & Answers</b>. These questions cover JavaScript Basics, Arrays, Objects, DOM, Events, ES6, Promises, Async/Await, Fetch API, Closures, and other important topics frequently asked in interviews.
+</div>
+<br>
+<div class="back">
+
+<a href="JAVASCRIPT.HTml">
+<i class="ri-arrow-left-line"></i>
+ ← Back 
+</a>
+</div>
+
+
+
+
+</body>
+</html>
