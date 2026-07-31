@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Interview Guide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+padding:40px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.book-cover{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:40px;
+}
+
+.book-cover h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.book-cover p{
+font-size:18px;
+opacity:.95;
+}
+
+.chapter{
+margin-top:45px;
+}
+
+.chapter-title{
+font-size:30px;
+color:#38bdf8;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,.15);
+margin-bottom:25px;
+}
+
+.question{
+padding:25px;
+background:#161b22;
+border-left:5px solid #38bdf8;
+border-radius:12px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.question:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(56,189,248,.2);
+}
+
+.question h3{
+color:#38bdf8;
+margin-bottom:12px;
+}
+
+.question p{
+line-height:1.8;
+color:#d1d5db;
+}
+.back a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 35px;
+    background:#E34F26;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.book-cover{
+padding:30px;
+}
+
+.book-cover h1{
+font-size:30px;
+}
+
+.chapter-title{
+font-size:24px;
+}
+
+.question{
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="book-cover">
+
+<h1>📘 Express.Js Interview Guide</h1>
+
+<p>
+GD Tech Learning Hub
+<br>
+Top Express.Js Interview Questions & Answers
+</p>
+
+</div>
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 1 : Express.js Basics</h2>
+
+<div class="question">
+<h3>Q1. What is Express.js?</h3>
+<p>Express.js is a fast, lightweight, and flexible web framework built on Node.js for creating web applications and REST APIs.</p>
+</div>
+
+<div class="question">
+<h3>Q2. Why is Express.js used?</h3>
+<p>Express.js is used to simplify backend development, routing, middleware handling, and API creation.</p>
+</div>
+
+<div class="question">
+<h3>Q3. How do you install Express.js?</h3>
+<p>Install Express.js using the command: <code>npm install express</code>.</p>
+</div>
+
+<div class="question">
+<h3>Q4. What is app.listen()?</h3>
+<p><code>app.listen()</code> starts the Express server and listens for incoming client requests on a specified port.</p>
+</div>
+
+<div class="question">
+<h3>Q5. What is Routing in Express.js?</h3>
+<p>Routing is the process of defining how an application responds to different HTTP requests and URLs.</p>
+</div>
+
+<div class="question">
+<h3>Q6. What are HTTP Methods?</h3>
+<p>The common HTTP methods are GET, POST, PUT, DELETE, and PATCH.</p>
+</div>
+
+<div class="question">
+<h3>Q7. What is app.get()?</h3>
+<p><code>app.get()</code> handles HTTP GET requests and is used to retrieve data from the server.</p>
+</div>
+
+<div class="question">
+<h3>Q8. What is app.post()?</h3>
+<p><code>app.post()</code> handles HTTP POST requests and is used to send data to the server.</p>
+</div>
+
+<div class="question">
+<h3>Q9. What is app.put()?</h3>
+<p><code>app.put()</code> handles HTTP PUT requests and is used to update existing data.</p>
+</div>
+
+<div class="question">
+<h3>Q10. What is app.delete()?</h3>
+<p><code>app.delete()</code> handles HTTP DELETE requests and is used to remove data from the server.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 2 : Express.js Middleware & Advanced Basics</h2>
+
+<div class="question">
+<h3>Q11. What is Middleware in Express.js?</h3>
+<p>Middleware is a function that runs between the request and response cycle. It is used for authentication, logging, and data processing.</p>
+</div>
+
+<div class="question">
+<h3>Q12. What is app.use() in Express.js?</h3>
+<p><code>app.use()</code> is used to add middleware functions and handle requests for specific paths.</p>
+</div>
+
+<div class="question">
+<h3>Q13. What is Express Router?</h3>
+<p>Express Router is used to create modular and separate routes for managing large applications easily.</p>
+</div>
+
+<div class="question">
+<h3>Q14. What are Route Parameters?</h3>
+<p>Route parameters are dynamic values passed in the URL. They are accessed using <code>req.params</code>.</p>
+</div>
+
+<div class="question">
+<h3>Q15. What are req and res in Express.js?</h3>
+<p><code>req</code> represents the client request, and <code>res</code> represents the server response.</p>
+</div>
+
+<div class="question">
+<h3>Q16. How to send JSON response in Express.js?</h3>
+<p>JSON response can be sent using the <code>res.json()</code> method.</p>
+</div>
+
+<div class="question">
+<h3>Q17. What is Error Handling Middleware?</h3>
+<p>Error Handling Middleware is used to handle errors and send proper error responses to users.</p>
+</div>
+
+<div class="question">
+<h3>Q18. How to serve static files in Express.js?</h3>
+<p>Static files like HTML, CSS, and images are served using <code>express.static()</code> middleware.</p>
+</div>
+
+<div class="question">
+<h3>Q19. What is REST API in Express.js?</h3>
+<p>REST API is a way to communicate between client and server using HTTP methods like GET, POST, PUT, and DELETE.</p>
+</div>
+
+<div class="question">
+<h3>Q20. What are the advantages of Express.js?</h3>
+<p>Express.js is fast, lightweight, easy to learn, supports middleware, and helps in building REST APIs quickly.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 3 : Express.js Routing & API</h2>
+
+<div class="question">
+<h3>Q21. What is the difference between GET and POST request?</h3>
+<p>GET is used to retrieve data from the server, while POST is used to send data to the server.</p>
+</div>
+
+<div class="question">
+<h3>Q22. What is req.body in Express.js?</h3>
+<p><code>req.body</code> is used to access data sent by the client in POST and PUT requests.</p>
+</div>
+
+<div class="question">
+<h3>Q23. What is req.params in Express.js?</h3>
+<p><code>req.params</code> is used to get dynamic values from the URL.</p>
+</div>
+
+<div class="question">
+<h3>Q24. What is req.query in Express.js?</h3>
+<p><code>req.query</code> is used to get query parameters from the URL.</p>
+</div>
+
+<div class="question">
+<h3>Q25. What is express.json()?</h3>
+<p><code>express.json()</code> is a built-in middleware used to parse JSON data from incoming requests.</p>
+</div>
+
+<div class="question">
+<h3>Q26. What is express.urlencoded()?</h3>
+<p><code>express.urlencoded()</code> is used to parse form data sent from HTML forms.</p>
+</div>
+
+<div class="question">
+<h3>Q27. What is MVC architecture in Express.js?</h3>
+<p>MVC stands for Model, View, and Controller. It separates application logic, data, and user interface.</p>
+</div>
+
+<div class="question">
+<h3>Q28. How to create a route in Express.js?</h3>
+<p>A route is created using HTTP methods like <code>app.get()</code>, <code>app.post()</code>, <code>app.put()</code>, and <code>app.delete()</code>.</p>
+</div>
+
+<div class="question">
+<h3>Q29. What is a RESTful API?</h3>
+<p>A RESTful API follows REST principles and uses HTTP methods to perform operations on resources.</p>
+</div>
+
+<div class="question">
+<h3>Q30. How does Express.js handle multiple routes?</h3>
+<p>Express.js handles multiple routes using Express Router, which helps organize routes into separate files.</p>
+</div>
+
+</div>
+<div class="result">
+🎯 <strong>Congratulations!</strong><br><br>
+You have completed the <b>Top 30 Express.js Interview Questions & Answers</b>. These questions cover Express.js Basics, Arrays, Objects, DOM, Events, ES6, Promises, Async/Await, Fetch API, Closures, and other important topics frequently asked in interviews.
+</div>
+
+<br>
+
+<div class="back">
+
+<a href="ExpressJS.HTML">
+<i class="ri-arrow-left-line"></i>
+ ← Back 
+</a>
+
+</div>
+
+
+</body>
+</html>

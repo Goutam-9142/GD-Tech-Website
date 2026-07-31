@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Interview Guide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+padding:40px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.book-cover{
+background:linear-gradient(135deg,#25eb74,#15525d);
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:40px;
+}
+
+.book-cover h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.book-cover p{
+font-size:18px;
+opacity:.95;
+}
+
+.chapter{
+margin-top:45px;
+}
+
+.chapter-title{
+font-size:30px;
+color:#38bdf8;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,.15);
+margin-bottom:25px;
+}
+
+.question{
+padding:25px;
+background:#161b22;
+border-left:5px solid #38bdf8;
+border-radius:12px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.question:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(56,189,248,.2);
+}
+
+.question h3{
+color:#38bdf8;
+margin-bottom:12px;
+}
+
+.question p{
+line-height:1.8;
+color:#d1d5db;
+}
+.back a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 35px;
+    background:#E34F26;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.book-cover{
+padding:30px;
+}
+
+.book-cover h1{
+font-size:30px;
+}
+
+.chapter-title{
+font-size:24px;
+}
+
+.question{
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="book-cover">
+
+<h1>📘 Node.Js Interview Guide</h1>
+
+<p>
+GD Tech Learning Hub
+<br>
+Top Nodee.Js Interview Questions & Answers
+</p>
+
+</div>
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 1 : Node.js Basics</h2>
+
+<div class="question">
+<h3>Q1. What is Node.js?</h3>
+<p>Node.js is an open-source JavaScript runtime environment used to build fast and scalable server-side applications.</p>
+</div>
+
+<div class="question">
+<h3>Q2. Why is Node.js used?</h3>
+<p>Node.js is used for backend development, REST APIs, real-time applications, file handling, and scalable web applications.</p>
+</div>
+
+<div class="question">
+<h3>Q3. What is the V8 Engine?</h3>
+<p>V8 is Google's JavaScript engine that executes JavaScript code quickly. It is used by Node.js.</p>
+</div>
+
+<div class="question">
+<h3>Q4. What are the features of Node.js?</h3>
+<p>Node.js is fast, asynchronous, event-driven, non-blocking, lightweight, scalable, and cross-platform.</p>
+</div>
+
+<div class="question">
+<h3>Q5. What is NPM?</h3>
+<p>NPM (Node Package Manager) is used to install, update, and manage Node.js packages and libraries.</p>
+</div>
+
+<div class="question">
+<h3>Q6. What is package.json?</h3>
+<p>package.json is a configuration file that stores project information, dependencies, scripts, and metadata.</p>
+</div>
+
+<div class="question">
+<h3>Q7. What is REPL in Node.js?</h3>
+<p>REPL stands for Read, Evaluate, Print, and Loop. It is an interactive environment used to execute JavaScript code.</p>
+</div>
+
+<div class="question">
+<h3>Q8. What are Modules in Node.js?</h3>
+<p>Modules are reusable pieces of code that help organize applications into smaller files.</p>
+</div>
+
+<div class="question">
+<h3>Q9. What is the difference between CommonJS and ES Modules?</h3>
+<p>CommonJS uses <code>require()</code> and <code>module.exports</code>, while ES Modules use <code>import</code> and <code>export</code>.</p>
+</div>
+
+<div class="question">
+<h3>Q10. What is module.exports?</h3>
+<p><code>module.exports</code> is used to export functions, objects, or variables from one module so they can be used in another module.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 2 : Node.js Core Modules</h2>
+
+<div class="question">
+<h3>Q11. What are Built-in Modules in Node.js?</h3>
+<p>Built-in modules are pre-installed modules provided by Node.js, such as <code>fs</code>, <code>http</code>, <code>path</code>, <code>os</code>, and <code>events</code>.</p>
+</div>
+
+<div class="question">
+<h3>Q12. What is the HTTP Module?</h3>
+<p>The HTTP module is used to create web servers and handle HTTP requests and responses.</p>
+</div>
+
+<div class="question">
+<h3>Q13. What is the File System (fs) Module?</h3>
+<p>The <code>fs</code> module is used to create, read, update, rename, and delete files.</p>
+</div>
+
+<div class="question">
+<h3>Q14. What is the Path Module?</h3>
+<p>The <code>path</code> module provides utilities for working with file and directory paths.</p>
+</div>
+
+<div class="question">
+<h3>Q15. What is the OS Module?</h3>
+<p>The <code>os</code> module provides information about the operating system, such as CPU, memory, platform, and hostname.</p>
+</div>
+
+<div class="question">
+<h3>Q16. What is EventEmitter?</h3>
+<p>EventEmitter is a class from the <code>events</code> module that allows you to create and handle custom events.</p>
+</div>
+
+<div class="question">
+<h3>Q17. What is a Stream in Node.js?</h3>
+<p>Streams are used to read or write data continuously without loading the entire file into memory.</p>
+</div>
+
+<div class="question">
+<h3>Q18. What is a Buffer?</h3>
+<p>A Buffer is a temporary memory area used to store binary data while reading or writing files and network data.</p>
+</div>
+
+<div class="question">
+<h3>Q19. What is the difference between Synchronous and Asynchronous methods?</h3>
+<p>Synchronous methods execute one task at a time and wait for completion, while Asynchronous methods execute tasks without blocking other operations.</p>
+</div>
+
+<div class="question">
+<h3>Q20. Why is Node.js called Non-Blocking?</h3>
+<p>Node.js uses a non-blocking, asynchronous I/O model, allowing multiple operations to run efficiently without waiting for previous tasks to finish.</p>
+</div>
+
+</div>
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 3 : Advanced Node.js Interview Questions</h2>
+
+<div class="question">
+<h3>Q21. What is a Callback Function?</h3>
+<p>A callback is a function passed as an argument to another function and is executed after the completion of a task.</p>
+</div>
+
+<div class="question">
+<h3>Q22. What is a Promise?</h3>
+<p>A Promise is an object that represents the eventual completion or failure of an asynchronous operation.</p>
+</div>
+
+<div class="question">
+<h3>Q23. What is Async/Await?</h3>
+<p>Async/Await is a modern way to handle asynchronous code, making it easier to read and write than callbacks or promise chains.</p>
+</div>
+
+<div class="question">
+<h3>Q24. What is Express.js?</h3>
+<p>Express.js is a fast and lightweight web framework for Node.js used to build web applications and REST APIs.</p>
+</div>
+
+<div class="question">
+<h3>Q25. What is Middleware in Express.js?</h3>
+<p>Middleware is a function that executes between the request and the response. It can modify requests, responses, or pass control to the next middleware.</p>
+</div>
+
+<div class="question">
+<h3>Q26. What is REST API?</h3>
+<p>REST API is an architectural style that allows communication between client and server using HTTP methods such as GET, POST, PUT, and DELETE.</p>
+</div>
+
+<div class="question">
+<h3>Q27. What is MongoDB?</h3>
+<p>MongoDB is a NoSQL database that stores data in JSON-like documents instead of tables.</p>
+</div>
+
+<div class="question">
+<h3>Q28. What is Mongoose?</h3>
+<p>Mongoose is an Object Data Modeling (ODM) library that helps connect Node.js applications with MongoDB.</p>
+</div>
+
+<div class="question">
+<h3>Q29. What is JWT?</h3>
+<p>JWT (JSON Web Token) is a secure token used for user authentication and authorization in web applications.</p>
+</div>
+
+<div class="question">
+<h3>Q30. Why should we learn Node.js?</h3>
+<p>Node.js is fast, scalable, and widely used for backend development, REST APIs, real-time applications, and full-stack JavaScript development.</p>
+</div>
+
+</div>
+
+<div class="result">
+🎯 <strong>Congratulations!</strong><br><br>
+You have completed the <b>Top 30 Node.js Interview Questions & Answers</b>. These questions cover Node.js Basics, Core Modules, Asynchronous Programming, Express.js, REST APIs, MongoDB, Authentication, and other important interview topics.
+</div>
+
+<br>
+
+<div class="back">
+
+<a href="NODEJS.HTML">
+<i class="ri-arrow-left-line"></i>
+ ← Back 
+</a>
+
+</div>
+
+</body>
+</html>

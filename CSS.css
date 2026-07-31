@@ -1,0 +1,211 @@
+
+/*==============================
+    GOOGLE FONT
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+      padding:100px 8%;
+    color: #fff;
+    background:
+    linear-gradient(rgba(13,17,23,.60), rgba(13,17,23,.73)),
+    url("BACKGROUND 1.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;  
+}
+
+/*==============================
+    COURSE SECTION
+==============================*/
+
+.course{
+    padding:80px 8%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.course-card{
+    width:100%;
+    max-width:800px;
+    background:#161b22;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+/*==============================
+      LOGO
+==============================*/
+
+.logo{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 20px;
+}
+
+/*==============================
+      TITLE
+==============================*/
+
+.course-card h1{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+/*==============================
+      DESCRIPTION
+==============================*/
+
+.desc{
+    text-align:center;
+    color:#9ca3af;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/*==============================
+      AUTHOR
+==============================*/
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#0d1117;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:35px;
+}
+
+.author img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #06b6d4;
+}
+
+.author h3{
+    font-size:20px;
+}
+
+.author span{
+    color:#94a3b8;
+    font-size:15px;
+}
+
+/*==============================
+      BUTTONS
+==============================*/
+
+.box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#1f2937;
+    color:#fff;
+    text-decoration:none;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:18px;
+    transition:.35s;
+    border:1px solid transparent;
+}
+
+.box i{
+    font-size:24px;
+    color:#06b6d4;
+}
+
+.box:hover{
+    transform:translateX(8px);
+    border-color:#06b6d4;
+    box-shadow:0 10px 25px rgba(6,182,212,.25);
+}
+
+.box:hover i{
+    color:#fff;
+}
+
+/*==============================
+      BACK BUTTON
+==============================*/
+
+.back-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:#fff;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(6,182,212,.35);
+}
+
+/*==============================
+      MOBILE
+==============================*/
+
+@media(max-width:768px){
+
+.course{
+    padding:50px 5%;
+}
+
+.course-card{
+    padding:25px;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+}
+
+.course-card h1{
+    font-size:30px;
+}
+
+.desc{
+    font-size:15px;
+}
+
+.author{
+    flex-direction:column;
+    text-align:center;
+}
+
+.box{
+    padding:15px;
+    font-size:15px;
+}
+
+.box i{
+    font-size:22px;
+}
+
+.back-btn{
+    width:100%;
+    text-align:center;
+}
+
+}
