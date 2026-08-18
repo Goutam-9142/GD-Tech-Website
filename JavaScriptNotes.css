@@ -1,0 +1,545 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(13, 17, 23, 0.88),
+            rgba(13, 17, 23, 0.95)
+        ),
+        url("BACKGROUND 1.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.notes-header {
+
+    width: 100%;
+
+    padding: 25px 8%;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(13,17,23,0.75);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.header-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: #06b6d4;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+
+    transform: translateX(-5px);
+
+    color: #22d3ee;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.title-area > i {
+
+    font-size: 42px;
+
+    color: #06b6d4;
+}
+
+.title-area h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 3px;
+}
+
+.title-area p {
+
+    color: #9ca3af;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.notes-section {
+
+    padding: 80px 8% 100px;
+
+    max-width: 1300px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.small-title {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #06b6d4;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.section-title p {
+
+    color: #9ca3af;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   CHAPTER CONTAINER
+========================= */
+
+.chapter-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(500px, 1fr)
+    );
+
+    gap: 22px;
+}
+
+
+/* =========================
+   CHAPTER CARD
+========================= */
+
+.chapter-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: rgba(22, 27, 34, 0.95);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    transition: 0.35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Shine effect */
+
+.chapter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.06),
+            transparent
+        );
+
+    transition: 0.6s;
+}
+
+.chapter-card:hover::before {
+
+    left: 100%;
+}
+
+.chapter-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #06b6d4;
+
+    box-shadow:
+        0 15px 35px rgba(6,182,212,0.18);
+}
+
+
+/* =========================
+   PDF ICON
+========================= */
+
+.chapter-icon {
+
+    min-width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(6,182,212,0.10);
+
+    color: #06b6d4;
+}
+
+.chapter-icon i {
+
+    font-size: 32px;
+}
+
+
+/* =========================
+   CHAPTER INFO
+========================= */
+
+.chapter-info {
+
+    flex: 1;
+}
+
+.chapter-number {
+
+    display: block;
+
+    color: #06b6d4;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.chapter-info h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+.chapter-info p {
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.view-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    background: #06b6d4;
+
+    color: #061016;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+
+    background: #22d3ee;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   BOTTOM BUTTON
+========================= */
+
+.bottom-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 55px;
+}
+
+.bottom-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #06b6d4
+        );
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.bottom-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(6,182,212,0.25);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .chapter-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .notes-section {
+
+        padding: 70px 6%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .notes-header {
+
+        padding: 20px 5%;
+    }
+
+    .header-content {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .title-area h1 {
+
+        font-size: 23px;
+    }
+
+    .title-area > i {
+
+        font-size: 35px;
+    }
+
+    .notes-section {
+
+        padding: 55px 5% 70px;
+    }
+
+    .section-title h2 {
+
+        font-size: 32px;
+    }
+
+    .section-title p {
+
+        font-size: 14px;
+    }
+
+    .chapter-card {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 22px;
+    }
+
+    .chapter-icon {
+
+        min-width: 55px;
+
+        height: 55px;
+    }
+
+    .chapter-info h3 {
+
+        font-size: 18px;
+    }
+
+    .chapter-info p {
+
+        font-size: 13px;
+    }
+
+    .view-btn {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .section-title h2 {
+
+        font-size: 28px;
+    }
+
+    .chapter-card {
+
+        padding: 18px;
+    }
+
+}

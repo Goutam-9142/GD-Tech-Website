@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - Goutam Dey</title>
+
+<link rel="stylesheet" href="Contact.css">
+
+</head>
+
+
+<body>
+
+
+<section class="contact">
+
+<h1>Contact Me</h1>
+
+<p>
+If you have any project or opportunity, feel free to contact me.
+</p>
+
+
+
+<div class="contact-box">
+
+
+<div class="info">
+
+<h2>Get In Touch</h2>
+
+<p><b>Name:</b> Goutam Dey</p>
+
+<p><b>Email:</b> deygoutam247@gmail.com</p>
+
+<p><b>Location:</b> Bhubaneswar, Odisha</p>
+
+<p><b>Education:</b> B.Tech CSE (AIML)</p>
+
+<p><b>Skills:</b> HTML, CSS, JavaScript, Node.js</p>
+
+<p><b>Interest:</b> Web Development & AI Projects</p>
+
+
+<p class="message">
+I am always open to discussing new projects,
+creative ideas and opportunities.
+</p>
+
+
+</div>
+
+
+
+
+<form id="contact-form">
+
+
+<input 
+type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required>
+
+
+<input
+type="text"
+id="subject"
+placeholder="Subject"
+required>
+
+
+<textarea
+id="message"
+placeholder="Your Message"
+required></textarea>
+
+
+
+<button type="submit">
+Send Message
+</button>
+
+
+</form>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+
+
+emailjs.init("zuNziGAwiOTTq565-");
+
+
+
+document
+.getElementById("contact-form")
+.addEventListener("submit", function(event){
+
+
+event.preventDefault();
+
+
+
+let params = {
+
+
+from_name:
+document.getElementById("name").value,
+
+
+from_email:
+document.getElementById("email").value,
+
+
+subject:
+document.getElementById("subject").value,
+
+
+message:
+document.getElementById("message").value
+
+
+};
+
+console.log(params);
+
+
+emailjs.send(
+
+"service_m28myug",
+
+"template_yl6pier",
+
+params
+
+)
+
+
+
+.then(function(){
+
+
+alert("Message Sent Successfully!");
+
+document.getElementById("contact-form").reset();
+
+
+})
+
+
+
+.catch(function(error){
+
+
+alert("Message Failed!");
+
+console.log(error);
+
+
+});
+
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
