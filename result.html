@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Semester Results | GD Tech</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+        radial-gradient(circle at top left, #2563eb 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #7c3aed 0%, transparent 35%),
+        #07111f;
+
+    color:white;
+}
+
+/* Main Card */
+.login-box{
+    width:100%;
+    max-width:430px;
+    padding:38px 34px;
+
+    background:rgba(17, 30, 50, 0.88);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:24px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.45),
+        0 0 35px rgba(56,189,248,0.12);
+
+    backdrop-filter:blur(15px);
+}
+
+/* Logo */
+.logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#38bdf8,#6366f1);
+    box-shadow:0 10px 30px rgba(56,189,248,0.3);
+
+    font-size:38px;
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:8px;
+
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    text-align:center;
+    color:#aab7c8;
+    line-height:1.6;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+/* Labels */
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#dbeafe;
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:14px 15px;
+    margin-bottom:20px;
+
+    background:#0b1729;
+    color:white;
+
+    border:1px solid #263b56;
+    border-radius:12px;
+
+    outline:none;
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:#718096;
+}
+
+input:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 0 3px rgba(56,189,248,0.12);
+}
+
+/* Login Button */
+button{
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    color:white;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+    transition:0.3s;
+
+    box-shadow:0 8px 25px rgba(37,99,235,0.3);
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(37,99,235,0.45);
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+/* Message */
+#message{
+    min-height:22px;
+    margin-top:18px;
+
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* Back */
+.back{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.back a:hover{
+    color:#818cf8;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    margin-top:22px;
+    color:#64748b;
+    font-size:12px;
+}
+
+/* Mobile */
+@media(max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    .login-box{
+        padding:30px 22px;
+        border-radius:20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="logo">
+        🎓
+    </div>
+
+    <h1>Semester Results</h1>
+
+    <p class="subtitle">
+        <strong>GD Tech Learning Hub</strong><br>
+        Login securely to view your academic results
+    </p>
+
+
+    <form id="loginForm">
+
+        <label for="email">
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+        >
+
+
+        <button type="submit" id="loginBtn">
+            🔐 Login
+        </button>
+
+    </form>
+
+
+    <p id="message"></p>
+
+
+    <div class="back">
+        <a href="index.html">
+            ← Back to Portfolio
+        </a>
+    </div>
+
+
+    <div class="footer">
+        © 2026 GD Tech • Academic Portal
+    </div>
+
+</div>
+
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* ==============================
+   SUPABASE CONFIGURATION
+================================ */
+
+const SUPABASE_URL =
+"https://nstivztmhbnwrziouaiv.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_ynkGrBSWTdTbIA5UbJACjg_1-YTg_hk";
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const message =
+        document.getElementById("message");
+
+    message.style.color = "#fbbf24";
+    message.innerText = "Logging in...";
+
+    const { error } =
+        await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+    if(error){
+
+        console.log(error);
+
+        message.style.color = "#f87171";
+        message.innerText =
+            "❌ Invalid email or password.";
+
+        return;
+    }
+
+    message.style.color = "#4ade80";
+    message.innerText =
+        "✅ Login successful...";
+
+    setTimeout(() => {
+        window.location.href = "Semester Result Final.html";
+    }, 700);
+
+});
+
+</script>
+
+</body>
+</html>

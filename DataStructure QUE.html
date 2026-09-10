@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Structure Interview Guide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+padding:40px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.book-cover{
+background:linear-gradient(135deg,#2feb25,#06b6d4);
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:40px;
+}
+
+.book-cover h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.book-cover p{
+font-size:18px;
+opacity:.95;
+}
+
+.chapter{
+margin-top:45px;
+}
+
+.chapter-title{
+font-size:30px;
+color:#52f838;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,.15);
+margin-bottom:25px;
+}
+
+.question{
+padding:25px;
+background:#161b22;
+border-left:5px solid #42f838;
+border-radius:12px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.question:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(56,189,248,.2);
+}
+
+.question h3{
+color:#38f845;
+margin-bottom:12px;
+}
+
+.question p{
+line-height:1.8;
+color:#d1d5db;
+}
+
+code{
+color:#68f74f;
+}
+
+.result{
+margin-top:40px;
+background:#21f37c;
+padding:25px;
+border-radius:12px;
+line-height:1.7;
+}
+
+.back{
+text-align:center;
+margin:45px 0;
+}
+
+.back a{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:15px 35px;
+background:#21f380;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+}
+
+.back a:hover{
+background:#1cd219;
+}
+
+@media(max-width:768px){
+
+.book-cover{
+padding:30px;
+}
+
+.book-cover h1{
+font-size:30px;
+}
+
+.chapter-title{
+font-size:24px;
+}
+
+.question{
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="book-cover">
+
+<h1>🌳 Data Structure Interview Guide</h1>
+
+<p>
+GD Tech Learning Hub
+<br>
+Top Data Structure Interview Questions & Answers
+</p>
+
+</div>
+
+
+<!-- CHAPTER 1 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 1 : Data Structure Basics</h2>
+
+<div class="question">
+<h3>Q1. What is Data Structure?</h3>
+<p>Data Structure is a way of organizing and storing data so that it can be used efficiently.</p>
+</div>
+
+<div class="question">
+<h3>Q2. Why are Data Structures important?</h3>
+<p>Data Structures help us store, manage, and access data efficiently and make programs faster.</p>
+</div>
+
+<div class="question">
+<h3>Q3. What are the types of Data Structures?</h3>
+<p>The main types are Linear Data Structures and Non-Linear Data Structures.</p>
+</div>
+
+<div class="question">
+<h3>Q4. What is a Linear Data Structure?</h3>
+<p>A Linear Data Structure stores elements in a sequential order. Examples are Array, Linked List, Stack, and Queue.</p>
+</div>
+
+<div class="question">
+<h3>Q5. What is a Non-Linear Data Structure?</h3>
+<p>A Non-Linear Data Structure does not store data sequentially. Examples are Tree and Graph.</p>
+</div>
+
+<div class="question">
+<h3>Q6. What is an Array?</h3>
+<p>An Array is a collection of elements of the same data type stored in continuous memory locations.</p>
+</div>
+
+<div class="question">
+<h3>Q7. What are the advantages of an Array?</h3>
+<p>Arrays provide fast access to elements using an index and are easy to traverse.</p>
+</div>
+
+<div class="question">
+<h3>Q8. What is a Linked List?</h3>
+<p>A Linked List is a collection of nodes where each node contains data and a link to another node.</p>
+</div>
+
+<div class="question">
+<h3>Q9. What is a Node?</h3>
+<p>A Node is a basic element of a linked list that contains data and a pointer or reference to another node.</p>
+</div>
+
+<div class="question">
+<h3>Q10. What is the difference between Array and Linked List?</h3>
+<p>An Array stores elements in continuous memory, while a Linked List stores nodes in different memory locations connected using links.</p>
+</div>
+
+</div>
+
+
+<!-- CHAPTER 2 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 2 : Stack, Queue & Searching</h2>
+
+<div class="question">
+<h3>Q11. What is a Stack?</h3>
+<p>A Stack is a linear data structure that follows the LIFO (Last In, First Out) principle.</p>
+</div>
+
+<div class="question">
+<h3>Q12. What are the basic operations of Stack?</h3>
+<p>The main operations are Push, Pop, and Peek.</p>
+</div>
+
+<div class="question">
+<h3>Q13. What is Push?</h3>
+<p>Push is the operation used to add an element to the top of a stack.</p>
+</div>
+
+<div class="question">
+<h3>Q14. What is Pop?</h3>
+<p>Pop is the operation used to remove the top element from a stack.</p>
+</div>
+
+<div class="question">
+<h3>Q15. What is a Queue?</h3>
+<p>A Queue is a linear data structure that follows the FIFO (First In, First Out) principle.</p>
+</div>
+
+<div class="question">
+<h3>Q16. What are the basic operations of Queue?</h3>
+<p>The main operations are Enqueue and Dequeue.</p>
+</div>
+
+<div class="question">
+<h3>Q17. What is Enqueue?</h3>
+<p>Enqueue is the operation used to add an element to the rear of a queue.</p>
+</div>
+
+<div class="question">
+<h3>Q18. What is Dequeue?</h3>
+<p>Dequeue is the operation used to remove an element from the front of a queue.</p>
+</div>
+
+<div class="question">
+<h3>Q19. What is Linear Search?</h3>
+<p>Linear Search checks each element one by one until the required element is found.</p>
+</div>
+
+<div class="question">
+<h3>Q20. What is Binary Search?</h3>
+<p>Binary Search repeatedly divides a sorted array into two parts to find the required element efficiently.</p>
+</div>
+
+</div>
+
+
+<!-- CHAPTER 3 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 3 : Trees, Graphs, Hashing & Sorting</h2>
+
+<div class="question">
+<h3>Q21. What is a Tree?</h3>
+<p>A Tree is a non-linear data structure that represents data in a hierarchical form using nodes and edges.</p>
+</div>
+
+<div class="question">
+<h3>Q22. What is a Binary Tree?</h3>
+<p>A Binary Tree is a tree in which each node can have at most two children.</p>
+</div>
+
+<div class="question">
+<h3>Q23. What is a Binary Search Tree (BST)?</h3>
+<p>A BST is a binary tree where smaller values are placed on the left side and larger values are placed on the right side.</p>
+</div>
+
+<div class="question">
+<h3>Q24. What are Tree Traversals?</h3>
+<p>The main tree traversals are Preorder, Inorder, and Postorder.</p>
+</div>
+
+<div class="question">
+<h3>Q25. What is a Graph?</h3>
+<p>A Graph is a non-linear data structure consisting of vertices (nodes) and edges that connect them.</p>
+</div>
+
+<div class="question">
+<h3>Q26. What is BFS?</h3>
+<p>BFS (Breadth First Search) visits graph nodes level by level. It commonly uses a queue.</p>
+</div>
+
+<div class="question">
+<h3>Q27. What is DFS?</h3>
+<p>DFS (Depth First Search) explores one path deeply before moving to another path. It can use a stack or recursion.</p>
+</div>
+
+<div class="question">
+<h3>Q28. What is Hashing?</h3>
+<p>Hashing is a technique used to store and retrieve data quickly using a hash function and hash table.</p>
+</div>
+
+<div class="question">
+<h3>Q29. What is Sorting?</h3>
+<p>Sorting is the process of arranging data in a particular order, such as ascending or descending order.</p>
+</div>
+
+<div class="question">
+<h3>Q30. What is Time Complexity?</h3>
+<p>Time Complexity describes how the running time of an algorithm changes as the input size increases. Common complexities include O(1), O(n), O(log n), and O(n²).</p>
+</div>
+
+</div>
+
+
+<div class="result">
+
+🎯 <strong>Congratulations!</strong>
+<br><br>
+
+You have completed the <b>Top 30 Data Structure Interview Questions & Answers</b>.
+
+<br><br>
+
+These questions cover Data Structure Basics, Arrays, Linked Lists,
+Stack, Queue, Searching, Trees, BST, Graphs, BFS, DFS,
+Hashing, Sorting, and Time Complexity.
+
+</div>
+
+
+<div class="back">
+
+<a href="DataStructure.html">
+← Back
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

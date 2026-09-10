@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Java Interview Guide</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:#fff;
+padding:40px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.book-cover{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:45px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+margin-bottom:40px;
+}
+
+.book-cover h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.book-cover p{
+font-size:18px;
+opacity:.95;
+}
+
+.chapter{
+margin-top:45px;
+}
+
+.chapter-title{
+font-size:30px;
+color:#38bdf8;
+padding-bottom:12px;
+border-bottom:2px solid rgba(255,255,255,.15);
+margin-bottom:25px;
+}
+
+.question{
+padding:25px;
+background:#161b22;
+border-left:5px solid #38bdf8;
+border-radius:12px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.question:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(56,189,248,.2);
+}
+
+.question h3{
+color:#38bdf8;
+margin-bottom:12px;
+}
+
+.question p{
+line-height:1.8;
+color:#d1d5db;
+}
+
+code{
+color:#4FC3F7;
+}
+
+.result{
+margin-top:40px;
+background:#2196F3;
+padding:25px;
+border-radius:12px;
+line-height:1.7;
+}
+
+.back{
+text-align:center;
+margin:45px 0;
+}
+
+.back a{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:15px 35px;
+background:#2196F3;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+}
+
+.back a:hover{
+background:#1976D2;
+}
+
+@media(max-width:768px){
+
+.book-cover{
+padding:30px;
+}
+
+.book-cover h1{
+font-size:30px;
+}
+
+.chapter-title{
+font-size:24px;
+}
+
+.question{
+padding:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="book-cover">
+
+<h1> Advanced Java Interview Guide</h1>
+
+<p>
+GD Tech Learning Hub
+<br>
+Top Advanced Java Interview Questions & Answers
+</p>
+
+</div>
+
+
+<!-- CHAPTER 1 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 1 : JDBC</h2>
+
+<div class="question">
+<h3>Q1. What is Advanced Java?</h3>
+<p>Advanced Java is used to develop web-based, database-driven, and enterprise applications using technologies such as JDBC, Servlets, JSP, and APIs.</p>
+</div>
+
+<div class="question">
+<h3>Q2. What is JDBC?</h3>
+<p>JDBC (Java Database Connectivity) is a Java API used to connect Java applications with databases.</p>
+</div>
+
+<div class="question">
+<h3>Q3. What are the main steps in JDBC?</h3>
+<p>The main steps are loading the driver, creating a connection, creating a statement, executing SQL, processing the result, and closing the connection.</p>
+</div>
+
+<div class="question">
+<h3>Q4. What is JDBC Driver?</h3>
+<p>A JDBC Driver is software that allows a Java application to communicate with a specific database.</p>
+</div>
+
+<div class="question">
+<h3>Q5. What is Connection in JDBC?</h3>
+<p>Connection represents a connection between a Java application and a database.</p>
+</div>
+
+<div class="question">
+<h3>Q6. What is Statement?</h3>
+<p>Statement is used to execute SQL queries against a database.</p>
+</div>
+
+<div class="question">
+<h3>Q7. What is PreparedStatement?</h3>
+<p>PreparedStatement is used to execute parameterized SQL queries. It improves performance and helps prevent SQL injection.</p>
+</div>
+
+<div class="question">
+<h3>Q8. What is ResultSet?</h3>
+<p>ResultSet stores the data returned by a database query, usually a SELECT query.</p>
+</div>
+
+<div class="question">
+<h3>Q9. What is CRUD?</h3>
+<p>CRUD stands for Create, Read, Update, and Delete. These are the basic operations performed on database data.</p>
+</div>
+
+<div class="question">
+<h3>Q10. What is the difference between Statement and PreparedStatement?</h3>
+<p>Statement executes normal SQL queries, while PreparedStatement supports parameterized queries and is generally safer and more efficient.</p>
+</div>
+
+</div>
+
+
+<!-- CHAPTER 2 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 2 : Servlets & JSP</h2>
+
+<div class="question">
+<h3>Q11. What is a Servlet?</h3>
+<p>A Servlet is a Java program that runs on a web server and is used to handle client requests and generate responses.</p>
+</div>
+
+<div class="question">
+<h3>Q12. What is the Servlet Life Cycle?</h3>
+<p>The main stages are loading, initialization using init(), request processing using service(), and destruction using destroy().</p>
+</div>
+
+<div class="question">
+<h3>Q13. What is doGet()?</h3>
+<p>doGet() is used to handle HTTP GET requests, commonly for retrieving data from the server.</p>
+</div>
+
+<div class="question">
+<h3>Q14. What is doPost()?</h3>
+<p>doPost() is used to handle HTTP POST requests, commonly for sending form data to the server.</p>
+</div>
+
+<div class="question">
+<h3>Q15. What is HttpServletRequest?</h3>
+<p>HttpServletRequest is used by a Servlet to access information sent by the client, such as form parameters and request details.</p>
+</div>
+
+<div class="question">
+<h3>Q16. What is HttpServletResponse?</h3>
+<p>HttpServletResponse is used by a Servlet to send a response back to the client.</p>
+</div>
+
+<div class="question">
+<h3>Q17. What is JSP?</h3>
+<p>JSP (JavaServer Pages) is a technology used to create dynamic web pages using HTML and Java-based server-side features.</p>
+</div>
+
+<div class="question">
+<h3>Q18. What is the JSP Life Cycle?</h3>
+<p>The JSP is translated into a Servlet, compiled, initialized, executed for requests, and finally destroyed.</p>
+</div>
+
+<div class="question">
+<h3>Q19. What are JSP Directives?</h3>
+<p>JSP directives provide instructions to the JSP container. Common directives are page, include, and taglib.</p>
+</div>
+
+<div class="question">
+<h3>Q20. What is the difference between Servlet and JSP?</h3>
+<p>Servlets are mainly used for request processing and control logic, while JSP is mainly used for creating the presentation or web-page layer.</p>
+</div>
+
+</div>
+
+
+<!-- CHAPTER 3 -->
+
+<div class="chapter">
+
+<h2 class="chapter-title">📖 Chapter 3 : Sessions, MVC & Web Technologies</h2>
+
+<div class="question">
+<h3>Q21. What is Session Management?</h3>
+<p>Session Management is used to maintain information about a user across multiple requests.</p>
+</div>
+
+<div class="question">
+<h3>Q22. What is a Cookie?</h3>
+<p>A Cookie is a small piece of data stored by the browser and sent with requests to the server.</p>
+</div>
+
+<div class="question">
+<h3>Q23. What is HttpSession?</h3>
+<p>HttpSession is used to store user-specific information on the server across multiple requests.</p>
+</div>
+
+<div class="question">
+<h3>Q24. What is MVC?</h3>
+<p>MVC stands for Model, View, and Controller. It separates application data, user interface, and control logic.</p>
+</div>
+
+<div class="question">
+<h3>Q25. What is a Filter?</h3>
+<p>A Filter is used to process requests and responses before or after they reach a Servlet. It can be used for logging, authentication, and validation.</p>
+</div>
+
+<div class="question">
+<h3>Q26. What is a Listener?</h3>
+<p>A Listener monitors events occurring in a web application, such as session creation or application startup.</p>
+</div>
+
+<div class="question">
+<h3>Q27. What is REST API?</h3>
+<p>A REST API is an interface that allows applications to communicate over HTTP using methods such as GET, POST, PUT, and DELETE.</p>
+</div>
+
+<div class="question">
+<h3>Q28. What is JSON?</h3>
+<p>JSON (JavaScript Object Notation) is a lightweight data format commonly used to exchange data between a client and a server.</p>
+</div>
+
+<div class="question">
+<h3>Q29. What is Authentication?</h3>
+<p>Authentication is the process of verifying the identity of a user, such as checking a username and password.</p>
+</div>
+
+<div class="question">
+<h3>Q30. What is Authorization?</h3>
+<p>Authorization determines what an authenticated user is allowed to access or perform in an application.</p>
+</div>
+
+</div>
+
+
+<div class="result">
+
+🎯 <strong>Congratulations!</strong>
+<br><br>
+
+You have completed the
+<b>Top 30 Advanced Java Interview Questions & Answers</b>.
+
+<br><br>
+
+These questions cover JDBC, Database Connectivity, CRUD,
+Servlets, JSP, Session Management, Cookies, MVC,
+Filters, REST API, JSON, Authentication, and Authorization.
+
+</div>
+
+
+<div class="back">
+
+<a href="Advance Java.html">
+← Back
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
