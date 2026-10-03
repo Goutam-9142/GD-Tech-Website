@@ -332,7 +332,7 @@ If you like this project:
 
 For suggestions, collaboration, or project-related queries, feel free to connect with the developer through GitHub.
 
-**GitHub:** `https://github.com/Goutam-9142`
+**GitHub:** `https://github.com/Goutam-9142/GD-Tech-Website/tree/main`
 
 ---
 
