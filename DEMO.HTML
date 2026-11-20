@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Semester Results | GD Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+        radial-gradient(circle at top left,#2563eb 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
+        #07111f;
+
+    color:white;
+}
+
+/* LOGIN CARD */
+
+.login-box{
+    width:100%;
+    max-width:430px;
+    padding:38px 34px;
+
+    background:rgba(17,30,50,0.88);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:24px;
+
+    box-shadow:0 25px 70px rgba(0,0,0,0.45);
+
+    backdrop-filter:blur(15px);
+}
+
+/* LOGO */
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:linear-gradient(135deg,#38bdf8,#6366f1);
+
+    font-size:38px;
+}
+
+/* HEADING */
+
+h1{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:8px;
+
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    text-align:center;
+    color:#aab7c8;
+    line-height:1.6;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+/* LABEL */
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#dbeafe;
+}
+
+/* INPUT WRAPPER */
+
+.input-wrapper{
+    position:relative;
+    width:100%;
+    margin-bottom:20px;
+}
+
+/* INPUT */
+
+.input-wrapper input{
+    width:100%;
+    padding:14px 48px 14px 15px;
+
+    background:#0b1729;
+    color:white;
+
+    border:1px solid #263b56;
+    border-radius:12px;
+
+    outline:none;
+    font-size:15px;
+}
+
+.input-wrapper input::placeholder{
+    color:#718096;
+}
+
+.input-wrapper input:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 0 3px rgba(56,189,248,0.12);
+}
+
+/* INPUT EYE BUTTON */
+
+.input-eye{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+    border:none;
+    color:#94a3b8;
+
+    cursor:pointer;
+    padding:0;
+}
+
+.input-eye:hover{
+    color:#38bdf8;
+    background:transparent;
+    box-shadow:none;
+}
+
+.input-eye svg{
+    width:21px;
+    height:21px;
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    color:white;
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+    transition:0.3s;
+
+    box-shadow:0 8px 25px rgba(37,99,235,0.3);
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(37,99,235,0.45);
+}
+
+.login-btn:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* HINTS ICON */
+
+.hints-icon{
+    width:30px;
+    height:30px;
+
+    padding:0;
+    margin:12px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+    color:#38bdf8;
+
+    border:0;
+    border-radius:50%;
+
+    box-shadow:none;
+    cursor:pointer;
+}
+
+.hints-icon:hover{
+    background:rgba(56,189,248,0.12);
+    box-shadow:none;
+}
+
+.hints-icon svg{
+    width:21px;
+    height:21px;
+}
+
+/* HINTS BOX */
+
+.hints-box{
+    display:none;
+
+    margin-top:12px;
+    padding:16px;
+
+    background:#0b1729;
+    border:1px solid #263b56;
+    border-radius:12px;
+
+    line-height:1.8;
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+.hints-box strong{
+    color:#38bdf8;
+}
+
+/* MESSAGE */
+
+#message{
+    min-height:22px;
+    margin-top:18px;
+
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* BACK LINK */
+
+.back{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.back a:hover{
+    color:#818cf8;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:22px;
+    color:#64748b;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    .login-box{
+        padding:30px 22px;
+        border-radius:20px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+        🎓
+    </div>
+
+    <!-- HEADING -->
+
+    <h1>Semester Results</h1>
+
+    <p class="subtitle">
+        <strong>GD Tech Learning Hub</strong><br>
+        Login securely to view your academic results
+    </p>
+
+
+    <!-- LOGIN FORM -->
+
+    <form id="loginForm">
+
+        <!-- EMAIL -->
+
+        <label for="email">Email Address</label>
+
+        <div class="input-wrapper">
+
+            <input
+                type="password"
+                id="email"
+                placeholder="Enter your email"
+                inputmode="email"
+                autocomplete="username"
+                required
+            >
+
+            <button
+                type="button"
+                class="input-eye"
+                onclick="toggleField('email','emailEye')"
+                aria-label="Show email"
+                title="Show/Hide Email"
+            >
+
+                <svg id="emailEye" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+                    <circle cx="12" cy="12" r="3"/>
+
+                    <path class="slash" d="M3 3l18 18"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <label for="password">Password</label>
+
+        <div class="input-wrapper">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button
+                type="button"
+                class="input-eye"
+                onclick="toggleField('password','passwordEye')"
+                aria-label="Show password"
+                title="Show/Hide Password"
+            >
+
+                <svg id="passwordEye" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+                    <circle cx="12" cy="12" r="3"/>
+
+                    <path class="slash" d="M3 3l18 18"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button type="submit" class="login-btn" id="loginBtn">
+            🔐 Login
+        </button>
+
+    </form>
+
+
+    <!-- LOGIN HINTS ICON -->
+
+    <button
+        type="button"
+        class="hints-icon"
+        id="hintsBtn"
+        onclick="toggleHints()"
+        title="Show Login Hints"
+        aria-label="Show Login Hints"
+        aria-expanded="false"
+    >
+
+        <svg viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+            <circle cx="12" cy="12" r="3"/>
+
+            <path id="hintSlash" d="M3 3l18 18"/>
+
+        </svg>
+
+    </button>
+
+
+    <!-- LOGIN HINTS -->
+
+    <div class="hints-box" id="hintsBox">
+
+        <p>
+            <strong>Email Hint:</strong><br>
+            deygoutam247@gmail.com
+        </p>
+
+        <p style="margin-top:10px;">
+            <strong>Password Hint:</strong><br>
+            Goutam@1234
+        </p>
+
+        <p style="margin-top:10px;color:#fbbf24;">
+            🔒 Your actual password is never displayed here.
+        </p>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <p id="message"></p>
+
+
+    <!-- BACK -->
+
+    <div class="back">
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        © 2026 GD Tech • Academic Portal
+    </div>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* SUPABASE CONFIGURATION */
+
+const SUPABASE_URL =
+"https://nstivztmhbnwrziouaiv.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_ynkGrBSWTdTbIA5UbJACjg_1-YTg_hk";
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* SHOW / HIDE EMAIL AND PASSWORD */
+
+function toggleField(fieldId, iconId){
+
+    const input = document.getElementById(fieldId);
+
+    const icon = document.getElementById(iconId);
+
+    const slash = icon.querySelector(".slash");
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        slash.style.display = "none";
+
+    }
+
+    else{
+
+        input.type = "password";
+
+        slash.style.display = "block";
+
+    }
+
+}
+
+
+/* SHOW / HIDE LOGIN HINTS */
+
+function toggleHints(){
+
+    const hintsBox =
+        document.getElementById("hintsBox");
+
+    const hintSlash =
+        document.getElementById("hintSlash");
+
+    const hintsBtn =
+        document.getElementById("hintsBtn");
+
+    const isHidden =
+        hintsBox.style.display !== "block";
+
+    if(isHidden){
+
+        hintsBox.style.display = "block";
+
+        hintSlash.style.display = "none";
+
+        hintsBtn.setAttribute("aria-expanded","true");
+
+        hintsBtn.setAttribute("aria-label","Hide Login Hints");
+
+        hintsBtn.title = "Hide Login Hints";
+
+    }
+
+    else{
+
+        hintsBox.style.display = "none";
+
+        hintSlash.style.display = "block";
+
+        hintsBtn.setAttribute("aria-expanded","false");
+
+        hintsBtn.setAttribute("aria-label","Show Login Hints");
+
+        hintsBtn.title = "Show Login Hints";
+
+    }
+
+}
+
+
+/* LOGIN SYSTEM */
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const message =
+        document.getElementById("message");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    message.style.color = "#fbbf24";
+
+    message.innerText = "Logging in...";
+
+    loginBtn.disabled = true;
+
+    loginBtn.innerText = "Please wait...";
+
+    try{
+
+        const { error } =
+            await supabaseClient.auth.signInWithPassword({
+
+                email: email,
+                password: password
+
+            });
+
+        if(error){
+
+            console.log(error);
+
+            message.style.color = "#f87171";
+
+            message.innerText =
+                "❌ Invalid email or password.";
+
+            return;
+
+        }
+
+        message.style.color = "#4ade80";
+
+        message.innerText =
+            "✅ Login successful...";
+
+        setTimeout(() => {
+
+            window.location.href =
+                "Semester Result Final.html";
+
+        },700);
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        message.style.color = "#f87171";
+
+        message.innerText =
+            "Something went wrong. Please try again.";
+
+    }
+
+    finally{
+
+        loginBtn.disabled = false;
+
+        loginBtn.innerText = "🔐 Login";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

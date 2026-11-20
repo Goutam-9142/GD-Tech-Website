@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
 <title>Semester Results | GD Tech</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI", Arial, sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
 body{
@@ -22,31 +24,31 @@ body{
     padding:20px;
 
     background:
-        radial-gradient(circle at top left, #2563eb 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #7c3aed 0%, transparent 35%),
+        radial-gradient(circle at top left,#2563eb 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
         #07111f;
 
     color:white;
 }
 
-/* Main Card */
+/* LOGIN CARD */
+
 .login-box{
     width:100%;
     max-width:430px;
     padding:38px 34px;
 
-    background:rgba(17, 30, 50, 0.88);
+    background:rgba(17,30,50,0.88);
     border:1px solid rgba(255,255,255,0.12);
     border-radius:24px;
 
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.45),
-        0 0 35px rgba(56,189,248,0.12);
+    box-shadow:0 25px 70px rgba(0,0,0,0.45);
 
     backdrop-filter:blur(15px);
 }
 
-/* Logo */
+/* LOGO */
+
 .logo{
     width:75px;
     height:75px;
@@ -59,12 +61,12 @@ body{
     border-radius:20px;
 
     background:linear-gradient(135deg,#38bdf8,#6366f1);
-    box-shadow:0 10px 30px rgba(56,189,248,0.3);
 
     font-size:38px;
 }
 
-/* Heading */
+/* HEADING */
+
 h1{
     text-align:center;
     font-size:30px;
@@ -83,7 +85,8 @@ h1{
     font-size:14px;
 }
 
-/* Labels */
+/* LABEL */
+
 label{
     display:block;
     margin-bottom:8px;
@@ -92,11 +95,19 @@ label{
     color:#dbeafe;
 }
 
-/* Inputs */
-input{
+/* INPUT WRAPPER */
+
+.input-wrapper{
+    position:relative;
     width:100%;
-    padding:14px 15px;
     margin-bottom:20px;
+}
+
+/* INPUT */
+
+.input-wrapper input{
+    width:100%;
+    padding:14px 48px 14px 15px;
 
     background:#0b1729;
     color:white;
@@ -106,21 +117,54 @@ input{
 
     outline:none;
     font-size:15px;
-
-    transition:0.3s;
 }
 
-input::placeholder{
+.input-wrapper input::placeholder{
     color:#718096;
 }
 
-input:focus{
+.input-wrapper input:focus{
     border-color:#38bdf8;
     box-shadow:0 0 0 3px rgba(56,189,248,0.12);
 }
 
-/* Login Button */
-button{
+/* INPUT EYE BUTTON */
+
+.input-eye{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+    border:none;
+    color:#94a3b8;
+
+    cursor:pointer;
+    padding:0;
+}
+
+.input-eye:hover{
+    color:#38bdf8;
+    background:transparent;
+    box-shadow:none;
+}
+
+.input-eye svg{
+    width:21px;
+    height:21px;
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
     width:100%;
     padding:14px;
 
@@ -139,16 +183,73 @@ button{
     box-shadow:0 8px 25px rgba(37,99,235,0.3);
 }
 
-button:hover{
+.login-btn:hover{
     transform:translateY(-2px);
     box-shadow:0 12px 30px rgba(37,99,235,0.45);
 }
 
-button:active{
-    transform:scale(0.98);
+.login-btn:disabled{
+    opacity:0.7;
+    cursor:not-allowed;
+    transform:none;
 }
 
-/* Message */
+/* HINTS ICON */
+
+.hints-icon{
+    width:30px;
+    height:30px;
+
+    padding:0;
+    margin:12px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+    color:#38bdf8;
+
+    border:0;
+    border-radius:50%;
+
+    box-shadow:none;
+    cursor:pointer;
+}
+
+.hints-icon:hover{
+    background:rgba(56,189,248,0.12);
+    box-shadow:none;
+}
+
+.hints-icon svg{
+    width:21px;
+    height:21px;
+}
+
+/* HINTS BOX */
+
+.hints-box{
+    display:none;
+
+    margin-top:12px;
+    padding:16px;
+
+    background:#0b1729;
+    border:1px solid #263b56;
+    border-radius:12px;
+
+    line-height:1.8;
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+.hints-box strong{
+    color:#38bdf8;
+}
+
+/* MESSAGE */
+
 #message{
     min-height:22px;
     margin-top:18px;
@@ -158,7 +259,8 @@ button:active{
     font-weight:600;
 }
 
-/* Back */
+/* BACK LINK */
+
 .back{
     text-align:center;
     margin-top:25px;
@@ -175,7 +277,8 @@ button:active{
     color:#818cf8;
 }
 
-/* Footer */
+/* FOOTER */
+
 .footer{
     text-align:center;
     margin-top:22px;
@@ -183,7 +286,8 @@ button:active{
     font-size:12px;
 }
 
-/* Mobile */
+/* MOBILE */
+
 @media(max-width:480px){
 
     body{
@@ -200,6 +304,7 @@ button:active{
     }
 
 }
+
 </style>
 </head>
 
@@ -207,9 +312,13 @@ button:active{
 
 <div class="login-box">
 
+    <!-- LOGO -->
+
     <div class="logo">
         🎓
     </div>
+
+    <!-- HEADING -->
 
     <h1>Semester Results</h1>
 
@@ -219,48 +328,165 @@ button:active{
     </p>
 
 
+    <!-- LOGIN FORM -->
+
     <form id="loginForm">
 
-        <label for="email">
-            Email Address
-        </label>
+        <!-- EMAIL -->
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-        >
+        <label for="email">Email Address</label>
+
+        <div class="input-wrapper">
+
+            <input
+                type="password"
+                id="email"
+                placeholder="Enter your email"
+                inputmode="email"
+                autocomplete="username"
+                required
+            >
+
+            <button
+                type="button"
+                class="input-eye"
+                onclick="toggleField('email','emailEye')"
+                aria-label="Show email"
+                title="Show/Hide Email"
+            >
+
+                <svg id="emailEye" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+                    <circle cx="12" cy="12" r="3"/>
+
+                    <path class="slash" d="M3 3l18 18"/>
+
+                </svg>
+
+            </button>
+
+        </div>
 
 
-        <label for="password">
-            Password
-        </label>
+        <!-- PASSWORD -->
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-        >
+        <label for="password">Password</label>
+
+        <div class="input-wrapper">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button
+                type="button"
+                class="input-eye"
+                onclick="toggleField('password','passwordEye')"
+                aria-label="Show password"
+                title="Show/Hide Password"
+            >
+
+                <svg id="passwordEye" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+                    <circle cx="12" cy="12" r="3"/>
+
+                    <path class="slash" d="M3 3l18 18"/>
+
+                </svg>
+
+            </button>
+
+        </div>
 
 
-        <button type="submit" id="loginBtn">
+        <!-- LOGIN BUTTON -->
+
+        <button type="submit" class="login-btn" id="loginBtn">
             🔐 Login
         </button>
 
     </form>
 
 
+    <!-- LOGIN HINTS ICON -->
+
+    <button
+        type="button"
+        class="hints-icon"
+        id="hintsBtn"
+        onclick="toggleHints()"
+        title="Show Login Hints"
+        aria-label="Show Login Hints"
+        aria-expanded="false"
+    >
+
+        <svg viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+
+            <circle cx="12" cy="12" r="3"/>
+
+            <path id="hintSlash" d="M3 3l18 18"/>
+
+        </svg>
+
+    </button>
+
+
+    <!-- LOGIN HINTS -->
+
+    <div class="hints-box" id="hintsBox">
+
+        <p>
+            <strong>Email Hint:</strong><br>
+            deygoutam247@gmail.com
+        </p>
+
+        <p style="margin-top:10px;">
+            <strong>Password Hint:</strong><br>
+            Goutam@1234
+        </p>
+
+        <p style="margin-top:10px;color:#fbbf24;">
+            🔒 Your actual password is never displayed here.
+        </p>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
     <p id="message"></p>
 
 
+    <!-- BACK -->
+
     <div class="back">
-        <a href="index.html">
-            ← Back to Portfolio
-        </a>
+        <a href="index.html">← Back to Portfolio</a>
     </div>
 
+
+    <!-- FOOTER -->
 
     <div class="footer">
         © 2026 GD Tech • Academic Portal
@@ -269,14 +495,13 @@ button:active{
 </div>
 
 
-<!-- Supabase -->
+<!-- SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
-/* ==============================
-   SUPABASE CONFIGURATION
-================================ */
+/* SUPABASE CONFIGURATION */
 
 const SUPABASE_URL =
 "https://nstivztmhbnwrziouaiv.supabase.co";
@@ -290,6 +515,84 @@ window.supabase.createClient(
     SUPABASE_PUBLISHABLE_KEY
 );
 
+
+/* SHOW / HIDE EMAIL AND PASSWORD */
+
+function toggleField(fieldId, iconId){
+
+    const input = document.getElementById(fieldId);
+
+    const icon = document.getElementById(iconId);
+
+    const slash = icon.querySelector(".slash");
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        slash.style.display = "none";
+
+    }
+
+    else{
+
+        input.type = "password";
+
+        slash.style.display = "block";
+
+    }
+
+}
+
+
+/* SHOW / HIDE LOGIN HINTS */
+
+function toggleHints(){
+
+    const hintsBox =
+        document.getElementById("hintsBox");
+
+    const hintSlash =
+        document.getElementById("hintSlash");
+
+    const hintsBtn =
+        document.getElementById("hintsBtn");
+
+    const isHidden =
+        hintsBox.style.display !== "block";
+
+    if(isHidden){
+
+        hintsBox.style.display = "block";
+
+        hintSlash.style.display = "none";
+
+        hintsBtn.setAttribute("aria-expanded","true");
+
+        hintsBtn.setAttribute("aria-label","Hide Login Hints");
+
+        hintsBtn.title = "Hide Login Hints";
+
+    }
+
+    else{
+
+        hintsBox.style.display = "none";
+
+        hintSlash.style.display = "block";
+
+        hintsBtn.setAttribute("aria-expanded","false");
+
+        hintsBtn.setAttribute("aria-label","Show Login Hints");
+
+        hintsBtn.title = "Show Login Hints";
+
+    }
+
+}
+
+
+/* LOGIN SYSTEM */
 
 document
 .getElementById("loginForm")
@@ -306,33 +609,72 @@ document
     const message =
         document.getElementById("message");
 
+    const loginBtn =
+        document.getElementById("loginBtn");
+
     message.style.color = "#fbbf24";
+
     message.innerText = "Logging in...";
 
-    const { error } =
-        await supabaseClient.auth.signInWithPassword({
-            email: email,
-            password: password
-        });
+    loginBtn.disabled = true;
 
-    if(error){
+    loginBtn.innerText = "Please wait...";
 
-        console.log(error);
+    try{
 
-        message.style.color = "#f87171";
+        const { error } =
+            await supabaseClient.auth.signInWithPassword({
+
+                email: email,
+                password: password
+
+            });
+
+        if(error){
+
+            console.log(error);
+
+            message.style.color = "#f87171";
+
+            message.innerText =
+                "❌ Invalid email or password.";
+
+            return;
+
+        }
+
+        message.style.color = "#4ade80";
+
         message.innerText =
-            "❌ Invalid email or password.";
+            "✅ Login successful...";
 
-        return;
+        setTimeout(() => {
+
+            window.location.href =
+                "Semester Result Final.html";
+
+        },700);
+
     }
 
-    message.style.color = "#4ade80";
-    message.innerText =
-        "✅ Login successful...";
+    catch(error){
 
-    setTimeout(() => {
-        window.location.href = "Semester Result Final.html";
-    }, 700);
+        console.error(error);
+
+        message.style.color = "#f87171";
+
+        message.innerText =
+            "Something went wrong. Please try again.";
+
+    }
+
+    finally{
+
+        loginBtn.disabled = false;
+
+        loginBtn.innerText = "🔐 Login";
+
+    }
 
 });
 

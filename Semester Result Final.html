@@ -1023,6 +1023,23 @@ td:first-child{
     }
 
 }
+/* PASS STATUS - GREEN */
+.pass {
+    color: #22c55e !important;
+    font-weight: 700;
+}
+
+/* FAIL STATUS - RED */
+.fail {
+    color: #ef4444 !important;
+    font-weight: 700;
+}
+
+/* UPCOMING STATUS - YELLOW */
+.upcoming-status {
+    color: #facc15 !important;
+    font-weight: 700;
+}
 
 </style>
 
@@ -1588,188 +1605,119 @@ td:first-child{
      MARKSHEET MODAL
 ================================================= -->
 
-<div
-    class="modal"
-    id="marksheetModal"
->
+<div class="modal" id="marksheetModal">
+    <div class="modal-box">
 
-<div class="modal-box">
+        <!-- MODAL HEADER -->
 
+        <div class="modal-header">
+            <h2 id="modalTitle">Semester 1 Marksheet</h2>
 
-<!-- MODAL HEADER -->
+            <button class="close" onclick="closeMarksheet()">×</button>
+        </div>
 
-<div class="modal-header">
+        <!-- MAXIMUM MARKS - PHASE ONLY -->
 
-    <h2 id="modalTitle">
-        Semester 1 Marksheet
-    </h2>
+        <div id="phaseMaxMarks" style="display:none; margin:15px 0; padding:15px; background:#0b1729; border-radius:12px;">
 
-    <button
-        class="close"
-        onclick="closeMarksheet()"
-    >
-        ×
-    </button>
+            <strong>Maximum Marks</strong>
 
+            <div style="display:flex; gap:25px; flex-wrap:wrap; margin-top:10px;">
+                <span>Mid-Term: <strong>30 Marks</strong></span>
+                <span>End-Term: <strong>50 Marks</strong></span>
+            </div>
+
+        </div>
+
+        <!-- OFFICIAL COLLEGE MARKSHEET -->
+
+        <button class="college-btn"
+            onclick="window.location.href='https://script.google.com/macros/s/AKfycby7va6bHAg-EeQqs66505JiVXgpt3ENmxjfaCi55fx7ZILe7abRXC9k2ynkiekUPAyB/exec'">
+
+            <span>View Official College Marksheet</span>
+
+        </button>
+
+        <!-- STUDENT INFO -->
+
+        <div class="marksheet-info">
+
+            <div>
+                <span>Student Name</span>
+                <strong>Goutam Dey</strong>
+            </div>
+
+            <div>
+                <span>Roll Number</span>
+                <strong>2501445106</strong>
+            </div>
+
+            <div>
+                <span>Course</span>
+                <strong>B.Tech CSE</strong>
+            </div>
+
+            <div>
+                <span>Semester</span>
+                <strong id="modalSemester">Semester 1</strong>
+            </div>
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead id="subjectTableHead">
+                    <tr>
+                        <th>No.</th>
+                        <th>Subject</th>
+                        <th>Code</th>
+                        <th>Credit</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="subjectTable"></tbody>
+
+            </table>
+
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="summary" id="marksheetSummary">
+
+            <div id="sgpaBox">
+                SGPA<br>
+                <strong id="modalSGPA">8.42</strong>
+            </div>
+
+            <div id="gradeBox">
+                Grade<br>
+                <strong id="modalGrade">A</strong>
+            </div>
+
+            <div id="overallStatusBox" style="display:none;">
+                Status<br>
+                <strong id="modalStatus">UPCOMING</strong>
+            </div>
+
+            <div>
+                Result<br>
+                <strong id="modalResult">PASS</strong>
+            </div>
+
+        </div>
+
+    </div>
 </div>
-
-
-<!-- OFFICIAL COLLEGE MARKSHEET -->
-
-<button
-    class="college-btn"
-
-    onclick="window.location.href='https://script.google.com/macros/s/AKfycby7va6bHAg-EeQqs66505JiVXgpt3ENmxjfaCi55fx7ZILe7abRXC9k2ynkiekUPAyB/exec'"
->
-
-    <span>
-        View Official College Marksheet
-    </span>
-
-</button>
-
-
-<!-- STUDENT INFO -->
-
-<div class="marksheet-info">
-
-    <div>
-
-        <span>
-            Student Name
-        </span>
-
-        <strong>
-            Goutam Dey
-        </strong>
-
-    </div>
-
-
-    <div>
-
-        <span>
-            Roll Number
-        </span>
-
-        <strong>
-            2501445106
-        </strong>
-
-    </div>
-
-
-    <div>
-
-        <span>
-            Course
-        </span>
-
-        <strong>
-            B.Tech CSE
-        </strong>
-
-    </div>
-
-
-    <div>
-
-        <span>
-            Semester
-        </span>
-
-        <strong id="modalSemester">
-            Semester 1
-        </strong>
-
-    </div>
-
-</div>
-
-
-<!-- TABLE -->
-
-<div class="table-wrapper">
-
-<table>
-
-<thead>
-
-<tr>
-
-    <th>No.</th>
-
-    <th>Subject</th>
-
-    <th>Code</th>
-
-    <th>Credit</th>
-
-    <th>Grade</th>
-
-    <th>Status</th>
-
-</tr>
-
-</thead>
-
-
-<tbody id="subjectTable">
-
-</tbody>
-
-</table>
-
-</div>
-
-
-<!-- SUMMARY -->
-
-<div class="summary">
-
-    <div>
-
-        SGPA<br>
-
-        <strong id="modalSGPA">
-            8.42
-        </strong>
-
-    </div>
-
-
-    <div>
-
-        Grade<br>
-
-        <strong id="modalGrade">
-            A
-        </strong>
-
-    </div>
-
-
-    <div>
-
-        Result<br>
-
-        <strong id="modalResult">
-            PASS
-        </strong>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
 
 
 <script>
-
 
 /* =====================================================
    SEMESTER DATA
@@ -1777,91 +1725,27 @@ td:first-child{
 
 const semesterData = {
 
-
 /* ================= SEMESTER 1 ================= */
 
 1: {
 
-    title:"Semester 1 Marksheet",
+    title: "Semester 1 Marksheet",
+    semester: "Semester 1",
 
-    semester:"Semester 1",
+    sgpa: "8.42",
+    grade: "A",
+    result: "PASS",
 
-    sgpa:"8.42",
+    subjects: [
 
-    grade:"A",
-
-    result:"PASS",
-
-    subjects:[
-
-        [
-            "1",
-            "Engineering Mathematics-I",
-            "25BTOTBS101",
-            "3",
-            "E"
-        ],
-
-        [
-            "2",
-            "English - 1",
-            "25BTOTHS101",
-            "4",
-            "E"
-        ],
-
-        [
-            "3",
-            "Problem Solving and Programming",
-            "25BTOTES101",
-            "3",
-            "E"
-        ],
-
-        [
-            "4",
-            "Universal Human Values",
-            "25BTOTVS102",
-            "3",
-            "E"
-        ],
-
-        [
-            "5",
-            "Fundamentals of Computer Programming",
-            "25BTOTES104",
-            "3",
-            "A"
-        ],
-
-        [
-            "6",
-            "Digital Electronic and Logic Design",
-            "25BTOTES102",
-            "1",
-            "A"
-        ],
-
-        [
-            "7",
-            "Problem Solving and Programming Lab",
-            "25BTOPES101",
-            "1",
-            "O"
-        ],
-
-        [
-            "8",
-            "Fundamentals of Computer Programming Lab",
-            "25BTOPES104",
-            "1",
-            "O"
-        ]
-
-        /* =================================================
-           YAHAN TUMHARA EXISTING SUBJECT 9 DATA RAKHO
-           EXACTLY JO TUMHARE CURRENT CODE MEIN HAI.
-        ================================================= */
+        ["1", "Engineering Mathematics-I", "25BTOTBS101", "3", "E"],
+        ["2", "English - 1", "25BTOTHS101", "4", "E"],
+        ["3", "Problem Solving and Programming", "25BTOTES101", "3", "E"],
+        ["4", "Universal Human Values", "25BTOTVS102", "3", "E"],
+        ["5", "Fundamentals of Computer Programming", "25BTOTES104", "3", "A"],
+        ["6", "Digital Electronic and Logic Design", "25BTOTES102", "1", "A"],
+        ["7", "Problem Solving and Programming Lab", "25BTOPES101", "1", "O"],
+        ["8", "Fundamentals of Computer Programming Lab", "25BTOPES104", "1", "O"]
 
     ]
 
@@ -1871,396 +1755,213 @@ const semesterData = {
 /* ================= SEMESTER 2 ================= */
 
 2: {
-     title:"Semester 2 Marksheet",
-    subjects: [
 
-        
-        [
-            "1",
-            "Engineering Mathematics-II",
-            "25BTOTBS201",
-            "4",
-            "O"
-        ],
-
-        [
-            "2",
-            "English - 2",
-            "25BTOTHS201",
-            "3",
-            "E"
-        ],
-
-        [
-            "3",
-            "Data Structures and Algorithms",
-            "25BTOTES201",
-            "3",
-            "E"
-        ],
-
-        [
-            "4",
-            "Object Oriented Programming",
-            "25BTOTES202",
-            "3",
-            "O"
-        ],
-
-        [
-            "5",
-            "Physics for Semiconductor Devices",
-            "25BTOTES103",
-            "3",
-            "O"
-        ],
-
-        [
-            "6",
-            "Lean Startup",
-            "25BTOTHS103",
-            "1",
-            "E"
-        ],
-
-        [
-            "7",
-            "English - 2 Lab",
-            "25BTOTPHS201",
-            "1",
-            "O"
-        ],
-
-        [
-            "8",
-            "Auto CAD",
-            "25BTOPES105",
-            "1",
-            "O"
-        ],
-
-        [
-            "9",
-            "Data Structures and Algorithms Lab",
-            "25BTOPES102",
-            "1",
-            "O"
-        ],
-
-        [
-            "10",
-            "Object Oriented Programming Lab",
-            "25BTOPES202",
-            "1",
-            "E"
-        ],
-
-         [
-            "11",
-            "Physics for Semiconductor Devices Lab",
-            "25BTOPES202",
-            "1",
-            "O"
-        ],
-
-          [
-            "12",
-            "Sports/Yogo/Ncc/Nss",
-            "25BTOPMC101",
-            "0",
-            "Pass"
-        ]
-
-
-    ],
+    title: "Semester 2 Marksheet",
+    semester: "Semester 2",
 
     sgpa: "8.46",
-
     grade: "A",
+    result: "PASS",
 
-    result: "PASS"
+    subjects: [
+
+        ["1", "Engineering Mathematics-II", "25BTOTBS201", "4", "O"],
+        ["2", "English - 2", "25BTOTHS201", "3", "E"],
+        ["3", "Data Structures and Algorithms", "25BTOTES201", "3", "E"],
+        ["4", "Object Oriented Programming", "25BTOTES202", "3", "O"],
+        ["5", "Physics for Semiconductor Devices", "25BTOTES103", "3", "O"],
+        ["6", "Lean Startup", "25BTOTHS103", "1", "E"],
+        ["7", "English - 2 Lab", "25BTOTPHS201", "1", "O"],
+        ["8", "Auto CAD", "25BTOPES105", "1", "O"],
+        ["9", "Data Structures and Algorithms Lab", "25BTOPES102", "1", "O"],
+        ["10", "Object Oriented Programming Lab", "25BTOPES202", "1", "E"],
+        ["11", "Physics for Semiconductor Devices Lab", "25BTOPES202", "1", "O"],
+        ["12", "Sports/Yogo/Ncc/Nss", "25BTOPMC101", "0", "Pass"]
+
+    ]
 
 },
 
 
+/* =====================================================
+   PHASE DATA FORMAT
 
-/* =================================================
-   SEMESTER 3 PHASES
-================================================= */
+   [No, Subject, Code, Mid Marks, Mid Status,
+    End Marks, End Status]
+
+===================================================== */
+
+
+/* ================= SEMESTER 3 ================= */
 
 "3-1": {
 
-    title:"Semester 3 • Phase 1",
+    title: "Semester 3 • Phase 1",
+    semester: "Semester 3 • Phase 1",
 
-    semester:"Semester 3 • Phase 1",
-    
-    subjects:[
+    status: "PASS",
+    result: "ARRIVING SOON",
 
-        [
-            "1",
-            "Discrete Mathematics",
-            "25BTOTBS301",
-            "4",
-            "E"
-        ],
+    subjects: [
 
-        [
-            "2",
-            "Advance Java Programming",
-            "25BTOTES301",
-            "3",
-            "E"
-        ],
+        ["1", "Discrete Mathematics", "25BTOTBS301", "27", "PASS", "46", "PASS"],
+        ["2", "Advance Java Programming", "25BTOTES301", "29", "PASS", "49", "PASS"],
+        ["3", "Microprocessor & Computer Architecture", "25BTOPES303", "26", "PASS", "42", "PASS"]
 
-     
-        [
-            "3",
-            "Microprocessor & Computer Architecture",
-            "25BTOPES303",
-            "1",
-            "E"
-        ]
-
-    ],
-    
-
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    
+    ]
 
 },
 
 "3-2": {
 
-    title:"Semester 3 • Phase 2",
+    title: "Semester 3 • Phase 2",
+    semester: "Semester 3 • Phase 2",
 
-    semester:"Semester 3 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-     subjects:[
+    subjects: [
 
-        [
-            "1",
-            "DESIGGN & ANALYSIS OF ALGORITHMS",
-            "25BTOTBS301",
-            "4",
-            "E"
-        ],
+        ["1", "Design & Analysis of Algorithms", "25BTOTBS301", "", "UPCOMING", "", "UPCOMING"],
+        ["2", "Artificial Intelligence", "25BTOTES301", "", "UPCOMING", "", "UPCOMING"],
+        ["3", "Database Management System", "25BTOPES303", "", "UPCOMING", "", "UPCOMING"]
 
-        [
-            "2",
-            "Artificial Intelligence ",
-            "25BTOTES301",
-            "3",
-            "E"
-        ],
-
-     
-        [
-            "3",
-            "Database Management System",
-            "25BTOPES303",
-            "1",
-            "E"
-        ]
-
-    ],
-
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    ]
 
 },
 
 
-/* =================================================
-   SEMESTER 4 PHASES
-================================================= */
+/* ================= SEMESTER 4 ================= */
 
 "4-1": {
 
-    title:"Semester 4 • Phase 1",
+    title: "Semester 4 • Phase 1",
+    semester: "Semester 4 • Phase 1",
 
-    semester:"Semester 4 • Phase 1",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 "4-2": {
 
-    title:"Semester 4 • Phase 2",
+    title: "Semester 4 • Phase 2",
+    semester: "Semester 4 • Phase 2",
 
-    semester:"Semester 4 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 
-/* =================================================
-   SEMESTER 5 PHASES
-================================================= */
+/* ================= SEMESTER 5 ================= */
 
 "5-1": {
 
-    title:"Semester 5 • Phase 1",
+    title: "Semester 5 • Phase 1",
+    semester: "Semester 5 • Phase 1",
 
-    semester:"Semester 5 • Phase 1",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 "5-2": {
 
-    title:"Semester 5 • Phase 2",
+    title: "Semester 5 • Phase 2",
+    semester: "Semester 5 • Phase 2",
 
-    semester:"Semester 5 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 
-/* =================================================
-   SEMESTER 6 PHASES
-================================================= */
+/* ================= SEMESTER 6 ================= */
 
 "6-1": {
 
-    title:"Semester 6 • Phase 1",
+    title: "Semester 6 • Phase 1",
+    semester: "Semester 6 • Phase 1",
 
-    semester:"Semester 6 • Phase 1",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 "6-2": {
 
-    title:"Semester 6 • Phase 2",
+    title: "Semester 6 • Phase 2",
+    semester: "Semester 6 • Phase 2",
 
-    semester:"Semester 6 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 
-/* =================================================
-   SEMESTER 7 PHASES
-================================================= */
+/* ================= SEMESTER 7 ================= */
 
 "7-1": {
 
-    title:"Semester 7 • Phase 1",
+    title: "Semester 7 • Phase 1",
+    semester: "Semester 7 • Phase 1",
 
-    semester:"Semester 7 • Phase 1",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 "7-2": {
 
-    title:"Semester 7 • Phase 2",
+    title: "Semester 7 • Phase 2",
+    semester: "Semester 7 • Phase 2",
 
-    semester:"Semester 7 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 
-/* =================================================
-   SEMESTER 8 PHASES
-================================================= */
+/* ================= SEMESTER 8 ================= */
 
 "8-1": {
 
-    title:"Semester 8 • Phase 1",
+    title: "Semester 8 • Phase 1",
+    semester: "Semester 8 • Phase 1",
 
-    semester:"Semester 8 • Phase 1",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 },
 
 "8-2": {
 
-    title:"Semester 8 • Phase 2",
+    title: "Semester 8 • Phase 2",
+    semester: "Semester 8 • Phase 2",
 
-    semester:"Semester 8 • Phase 2",
+    status: "UPCOMING",
+    result: "ARRIVING SOON",
 
-    sgpa:"--",
-
-    grade:"--",
-
-    result:"UPCOMING",
-
-    subjects:[]
+    subjects: []
 
 }
 
@@ -2278,7 +1979,7 @@ let selectedSemester = 3;
    OPEN PHASE SELECTOR
 ===================================================== */
 
-function openPhaseSelector(semester){
+function openPhaseSelector(semester) {
 
     selectedSemester = semester;
 
@@ -2291,8 +1992,7 @@ function openPhaseSelector(semester){
     document.getElementById("phase2Name").innerText =
         "Semester " + semester + " • Phase 2";
 
-    document.getElementById("phaseModal")
-        .classList.add("show");
+    document.getElementById("phaseModal").classList.add("show");
 
 }
 
@@ -2301,22 +2001,20 @@ function openPhaseSelector(semester){
    CLOSE PHASE SELECTOR
 ===================================================== */
 
-function closePhaseSelector(){
+function closePhaseSelector() {
 
-    document.getElementById("phaseModal")
-        .classList.remove("show");
+    document.getElementById("phaseModal").classList.remove("show");
 
 }
 
 
 /* =====================================================
-   PHASE 1 / PHASE 2 CLICK
+   OPEN SELECTED PHASE
 ===================================================== */
 
-function openSelectedPhase(phase){
+function openSelectedPhase(phase) {
 
-    const key =
-        selectedSemester + "-" + phase;
+    const key = selectedSemester + "-" + phase;
 
     closePhaseSelector();
 
@@ -2329,125 +2027,180 @@ function openSelectedPhase(phase){
    OPEN MARKSHEET
 ===================================================== */
 
-function openMarksheet(semester){
+function openMarksheet(semester) {
 
     const data = semesterData[semester];
 
-    if(!data){
-
+    if (!data) {
         alert("Marksheet data is not available.");
-
         return;
-
     }
 
+    const isPhase = typeof semester === "string";
 
-    document.getElementById("modalTitle").innerText =
-        data.title;
+    const tableHead = document.getElementById("subjectTableHead");
+    const table = document.getElementById("subjectTable");
 
-    document.getElementById("modalSemester").innerText =
-        data.semester;
-
-    document.getElementById("modalSGPA").innerText =
-        data.sgpa;
-
-    document.getElementById("modalGrade").innerText =
-        data.grade;
-
-    document.getElementById("modalResult").innerText =
-        data.result;
-
-
-    const table =
-        document.getElementById("subjectTable");
+    document.getElementById("modalTitle").innerText = data.title;
+    document.getElementById("modalSemester").innerText = data.semester;
 
     table.innerHTML = "";
 
 
-    /* NO SUBJECT DATA */
+    /* ================= PHASE MARKSHEET ================= */
 
-    if(data.subjects.length === 0){
+    if (isPhase) {
 
-        table.innerHTML = `
+        document.getElementById("phaseMaxMarks").style.display = "block";
 
+        document.getElementById("sgpaBox").style.display = "none";
+        document.getElementById("gradeBox").style.display = "none";
+
+        document.getElementById("overallStatusBox").style.display = "block";
+
+        document.getElementById("modalStatus").innerText =
+            data.status || "UPCOMING";
+
+        document.getElementById("modalResult").innerText =
+            data.result || "UPCOMING";
+
+
+        tableHead.innerHTML = `
             <tr>
-
-                <td
-                    colspan="6"
-                    style="
-                        text-align:center;
-                        padding:30px;
-                        color:#94a3b8;
-                    "
-                >
-
-                    📋 Marksheet data will appear
-                    after the result is uploaded.
-
-                </td>
-
+                <th>No.</th>
+                <th>Subject</th>
+                <th>Code</th>
+                <th>Mid Marks</th>
+                <th>Status</th>
+                <th>End Marks</th>
+                <th>Status</th>
             </tr>
-
         `;
 
     }
 
 
-    /* SUBJECT DATA */
+    /* ================= SEMESTER 1 AND 2 ================= */
 
-    data.subjects.forEach(subject => {
+    else {
 
-        const row =
-            document.createElement("tr");
+        document.getElementById("phaseMaxMarks").style.display = "none";
 
+        document.getElementById("sgpaBox").style.display = "block";
+        document.getElementById("gradeBox").style.display = "block";
 
-        const status =
-            subject[4] === "F"
-            ? "FAIL"
-            : "PASS";
+        document.getElementById("overallStatusBox").style.display = "none";
 
-
-        const statusClass =
-            status === "PASS"
-            ? "pass"
-            : "fail";
+        document.getElementById("modalSGPA").innerText = data.sgpa;
+        document.getElementById("modalGrade").innerText = data.grade;
+        document.getElementById("modalResult").innerText = data.result;
 
 
-        row.innerHTML = `
-
-            <td>
-                ${subject[0]}
-            </td>
-
-            <td>
-                ${subject[1]}
-            </td>
-
-            <td>
-                ${subject[2]}
-            </td>
-
-            <td>
-                ${subject[3]}
-            </td>
-
-            <td>
-                ${subject[4]}
-            </td>
-
-            <td class="${statusClass}">
-                ${status}
-            </td>
-
+        tableHead.innerHTML = `
+            <tr>
+                <th>No.</th>
+                <th>Subject</th>
+                <th>Code</th>
+                <th>Credit</th>
+                <th>Grade</th>
+                <th>Status</th>
+            </tr>
         `;
 
-        table.appendChild(row);
-
-    });
+    }
 
 
-    document.getElementById("marksheetModal")
-        .classList.add("show");
+    /* ================= EMPTY SUBJECT DATA ================= */
+
+    if (!data.subjects || data.subjects.length === 0) {
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="${isPhase ? 7 : 6}"
+                    style="text-align:center;padding:30px;color:#94a3b8;">
+
+                    Marksheet data will appear after the result is uploaded.
+
+                </td>
+            </tr>
+        `;
+
+    }
+
+
+    /* ================= SUBJECT DATA ================= */
+
+    else {
+
+        data.subjects.forEach(subject => {
+
+            const row = document.createElement("tr");
+
+            if (isPhase) {
+
+                const midStatus = subject[4] || "UPCOMING";
+                const endStatus = subject[6] || "UPCOMING";
+
+                const midClass =
+                    midStatus === "PASS" ? "pass" :
+                    midStatus === "FAIL" ? "fail" : "";
+
+                const endClass =
+                    endStatus === "PASS" ? "pass" :
+                    endStatus === "FAIL" ? "fail" : "";
+
+                row.innerHTML = `
+
+                    <td>${subject[0]}</td>
+
+                    <td>${subject[1]}</td>
+
+                    <td>${subject[2]}</td>
+
+                    <td>${subject[3] === "" ? "--" : subject[3]}</td>
+
+                    <td class="${midClass}">${midStatus}</td>
+
+                    <td>${subject[5] === "" ? "--" : subject[5]}</td>
+
+                    <td class="${endClass}">${endStatus}</td>
+
+                `;
+
+            } else {
+
+                const status =
+                    subject[4] === "F" ? "FAIL" : "PASS";
+
+                const statusClass =
+                    status === "PASS" ? "pass" : "fail";
+
+                row.innerHTML = `
+
+                    <td>${subject[0]}</td>
+
+                    <td>${subject[1]}</td>
+
+                    <td>${subject[2]}</td>
+
+                    <td>${subject[3]}</td>
+
+                    <td>${subject[4]}</td>
+
+                    <td class="${statusClass}">${status}</td>
+
+                `;
+
+            }
+
+            table.appendChild(row);
+
+        });
+
+    }
+
+
+    document.getElementById("marksheetModal").classList.add("show");
 
 }
 
@@ -2456,10 +2209,9 @@ function openMarksheet(semester){
    CLOSE MARKSHEET
 ===================================================== */
 
-function closeMarksheet(){
+function closeMarksheet() {
 
-    document.getElementById("marksheetModal")
-        .classList.remove("show");
+    document.getElementById("marksheetModal").classList.remove("show");
 
 }
 
@@ -2468,23 +2220,9 @@ function closeMarksheet(){
    NEW UPDATE
 ===================================================== */
 
-/*
-    Jis semester/phase ka new result upload ho:
-
-    neeche true kar do.
-
-    Example:
-    newUpdates = {
-        "3-1": true
-    };
-
-    Isse Semester 3 card par NEW UPDATE dikhega.
-*/
-
 const newUpdates = {
 
     "3-1": true,
-
     "3-2": false,
 
     "4-1": false,
@@ -2509,28 +2247,19 @@ const newUpdates = {
    SHOW NEW UPDATE
 ===================================================== */
 
-function checkNewUpdates(){
+function checkNewUpdates() {
 
-    for(let semester = 3; semester <= 8; semester++){
+    for (let semester = 3; semester <= 8; semester++) {
 
-        let phase1 =
-            newUpdates[semester + "-1"];
+        const phase1 = newUpdates[semester + "-1"];
+        const phase2 = newUpdates[semester + "-2"];
 
-        let phase2 =
-            newUpdates[semester + "-2"];
+        if (phase1 || phase2) {
 
+            const badge = document.getElementById("newSem" + semester);
 
-        if(phase1 || phase2){
-
-            const badge =
-                document.getElementById(
-                    "newSem" + semester
-                );
-
-            if(badge){
-
+            if (badge) {
                 badge.style.display = "block";
-
             }
 
         }
@@ -2544,25 +2273,19 @@ function checkNewUpdates(){
    CLOSE MODAL BY OUTSIDE CLICK
 ===================================================== */
 
-document.getElementById("marksheetModal")
-.addEventListener("click",function(e){
+document.getElementById("marksheetModal").addEventListener("click", function(e) {
 
-    if(e.target === this){
-
+    if (e.target === this) {
         closeMarksheet();
-
     }
 
 });
 
 
-document.getElementById("phaseModal")
-.addEventListener("click",function(e){
+document.getElementById("phaseModal").addEventListener("click", function(e) {
 
-    if(e.target === this){
-
+    if (e.target === this) {
         closePhaseSelector();
-
     }
 
 });
@@ -2572,14 +2295,11 @@ document.getElementById("phaseModal")
    ESC KEY
 ===================================================== */
 
-document.addEventListener("keydown",function(e){
+document.addEventListener("keydown", function(e) {
 
-    if(e.key === "Escape"){
-
+    if (e.key === "Escape") {
         closeMarksheet();
-
         closePhaseSelector();
-
     }
 
 });
@@ -2590,6 +2310,7 @@ document.addEventListener("keydown",function(e){
 ===================================================== */
 
 checkNewUpdates();
+
 
 </script>
 
